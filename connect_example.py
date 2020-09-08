@@ -25,7 +25,6 @@ payment_intent = stripe.PaymentIntent.create(
 def calculatePlatformMargin():
   return 300 # Your logic goes here!!
 
-print(payment_intent)
 charge_id = payment_intent['charges']['data'][0]['id']
 supplier_1_transfer = stripe.Transfer.create(
   amount = 5000 - calculatePlatformMargin(),
